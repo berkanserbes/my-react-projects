@@ -1,0 +1,7 @@
+html,body, #root {
+    font-size: 0.9rem;
+    font-family: "sans-serif";
+    color: #1e2432;
+    height: 100%;
+    margin: 0
+}
