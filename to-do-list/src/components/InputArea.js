@@ -9,7 +9,13 @@ function InputArea(props) {
 
   return (
     <div className="form">
-      <input type="text" value={inputText} onChange={handleChange} />
+      <input
+        type="text"
+        value={inputText}
+        maxLength={20}
+        onChange={handleChange}
+        required
+      />
       <button
         onClick={() => {
           props.onAdd(inputText);
