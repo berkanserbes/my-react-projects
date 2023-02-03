@@ -1,0 +1,134 @@
+* {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  background: linear-gradient(to top, #edcc00, #a68126);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-size: 5rem;
+  position: absolute;
+  top: 12%;
+  left: 20%;
+  background-color: none;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.title span {
+  color: aquamarine;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  border-radius: 25px;
+  box-shadow: 10px 10px;
+  padding: 2rem 0;
+  width: 60%;
+  margin: 0 auto;
+}
+
+button {
+  margin-top: 2rem;
+  padding: 10px 0;
+  width: 10%;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+button span {
+  color: #164ca7;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+button:hover {
+  background: gainsboro;
+}
+
+button:active {
+  border: 2.2px solid;
+  background-color: black;
+}
+
+button:active span {
+  color: white;
+  font-weight: bolder;
+}
+
+.quote {
+  padding: 0 5rem;
+  text-align: justify;
+}
+
+.author {
+  margin-top: 0.5rem;
+}
+
+.author::before {
+  content: "- ";
+}
+
+@media screen and (max-width: 1024px) {
+  button {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 876px) and (max-width: 971px) {
+  .title {
+    font-size: 4rem;
+    top: 18%;
+  }
+}
+
+@media screen and (max-width: 876px) {
+  .title {
+    font-size: 3.5rem;
+    top: 14%;
+  }
+  .quote {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .title {
+    font-size: 2.5rem;
+    top: 14%;
+  }
+  button {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .title {
+    font-size: 2rem;
+    top: 10%;
+  }
+
+  .content-section {
+    width: 80%;
+  }
+
+  button {
+    width: 35%;
+  }
+}
