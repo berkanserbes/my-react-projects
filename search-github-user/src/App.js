@@ -17,6 +17,7 @@ async function fetchUsers(query) {
 function App() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [firstSearch, setFirstSearch] = useState(true);
 
   function onSearchChange(e) {
     setQuery(e.target.value);
@@ -27,6 +28,7 @@ function App() {
     const results = await fetchUsers(query);
     setQuery("");
     setResults(results);
+    setFirstSearch(false);
   }
 
   return (
@@ -38,7 +40,7 @@ function App() {
           onSubmit={onSearchSubmit}
           value={query}
         />
-        <h3>Results</h3>
+        { !firstSearch && <h3>Results</h3>}
         <div id="results">
           <div>
             {results.map((user) => {
