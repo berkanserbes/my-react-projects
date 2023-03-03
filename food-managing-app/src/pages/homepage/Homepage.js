@@ -6,6 +6,7 @@ import "./style.css";
 function Homepage() {
   const [isLoading, setLoading] = useState(false);
   const [recipes, setRecipes] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   const getDataFromSearchComponent = (getData) => {
     setLoading(true);
@@ -25,6 +26,20 @@ function Homepage() {
     getRecipies();
   };
 
+  const addToFavourites = (selectedItem) => {
+    let cpyFavourites = [...favourites];
+    const index = cpyFavourites.findIndex(
+      (item) => item.id === selectedItem.id
+    );
+    if (index === -1) {
+      cpyFavourites.push(selectedItem);
+      setFavourites(cpyFavourites);
+      localStorage.setItem("favourites", JSON.stringify(cpyFavourites));
+    } else {
+      alert(`Item is already present in favourites`);
+    }
+  };
+
   return (
     <div className="homepage">
       <Search getDataFromSearchComponent={getDataFromSearchComponent} />
@@ -41,6 +56,7 @@ function Homepage() {
                 image={recipe.image}
                 title={recipe.title}
                 recipe={recipe}
+                addToFavourites={() => addToFavourites(recipe)}
               />
             );
           })}
