@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import "./style.css";
 
-function Search() {
+function Search({ handleSubmit }) {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
+  const onSubmit = (e) => {
+    handleSubmit(e, search);
+  };
+
   return (
-    <form className="search-form">
+    <form className="search-form" onSubmit={onSubmit}>
       <input
         name="search"
         id="search"
