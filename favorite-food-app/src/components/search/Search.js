@@ -10,6 +10,7 @@ function Search({ handleSubmit }) {
 
   const onSubmit = (e) => {
     handleSubmit(e, search);
+    setSearch("");
   };
 
   return (
