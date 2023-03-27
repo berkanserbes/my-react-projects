@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Search from "../../components/search/Search";
-import Favorites from "../../components/favorites/Favorites";
+//import Favorites from "../../components/favorites/Favorites";
 import RecipeItem from "../../components/recipe-item/RecipeItem";
 import "./style.css";
 
@@ -26,7 +26,6 @@ function HomePage() {
   return (
     <div>
       <Search handleSubmit={handleSubmit} />
-      <Favorites />
       <div className="items">
         {data.map((item) => {
           return (

@@ -1,0 +1,11 @@
+.items {
+  display: flex;
+  gap: 25px;
+  overflow: auto;
+  margin-bottom: 30px;
+}
+
+.search-favorites input {
+  padding: 10px 50px;
+  margin-bottom: 30px;
+}
