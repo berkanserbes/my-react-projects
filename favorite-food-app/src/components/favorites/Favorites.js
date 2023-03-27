@@ -1,8 +1,9 @@
 import React from "react";
+import "./style.css";
 
 function Favorites({ id, image, title, removeFavorite }) {
   return (
-    <div>
+    <div className="favorite-item">
       <div>
         <img src={image} alt="item" key={id} />
       </div>
