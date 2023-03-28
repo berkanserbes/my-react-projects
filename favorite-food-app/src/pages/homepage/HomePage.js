@@ -39,6 +39,15 @@ function HomePage() {
     setFavorites(newFavorites);
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const filteredFavorites = favorites.filter((favorite) =>
+      favorite.title.toLowerCase().includes(favoriteQuery.toLowerCase())
+    );
+    setFavorites(filteredFavorites);
+    setFavoriteQuery("");
+  };
+
   return (
     <div>
       <Search handleSubmit={handleSubmit} />
@@ -51,6 +60,9 @@ function HomePage() {
             value={favoriteQuery}
             onChange={(e) => setFavoriteQuery(e.target.value)}
           />
+          <button type="submit" onClick={onSubmit}>
+            Filter
+          </button>
         </div>
         <div className="favorites">
           {favorites.map((item) => {
@@ -64,6 +76,9 @@ function HomePage() {
             );
           })}
         </div>
+      </div>
+      <div>
+        <h1 className="recipe-title">Recipe</h1>
       </div>
       <div className="items">
         {data.map((item) => {
