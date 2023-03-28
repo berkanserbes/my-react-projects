@@ -18,15 +18,30 @@
   flex-wrap: wrap;
 }
 
-.favorites-title {
+.favorites-title,
+.recipe-title {
   color: #fa6400;
   font-weight: 700;
   font-size: 35px;
-  margin: 12px 0 12px 0px;
   margin: 20px 0px;
 }
 
 .search-favorites input {
   padding: 10px 50px;
   margin-bottom: 30px;
+}
+
+.search-favorites button {
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin-left: 20px;
+  padding: 8px 50px;
 }
