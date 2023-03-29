@@ -25,13 +25,15 @@ function HomePage() {
     getRecipes();
   };
 
-  // Create addFavorite function
   const addFavorite = (item) => {
-    const newFavorites = [...favorites, item];
-    setFavorites(newFavorites);
+    if (favorites.some((favorite) => favorite.id === item.id)) {
+      alert("Already in favorites");
+    } else {
+      const newFavorites = [...favorites, item];
+      setFavorites(newFavorites);
+    }
   };
 
-  // Create removeFavorite function
   const removeFavorite = (item) => {
     const newFavorites = favorites.filter(
       (favorite) => favorite.id !== item.id
