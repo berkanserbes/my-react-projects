@@ -45,3 +45,9 @@
   margin-left: 20px;
   padding: 8px 50px;
 }
+
+.no-result {
+  color: #f02a07;
+  font-size: 20px;
+  margin: 20px 0px;
+}
